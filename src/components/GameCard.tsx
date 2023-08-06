@@ -12,7 +12,7 @@ function GameCard({ game }: Props) {
   const { background_image, name, parent_platforms, metacritic } = game;
   //   console.log(parent_platforms.map((e) => e.platform));
   return (
-    <Card width="300px" borderRadius={10} overflow="hidden">
+    <Card>
       <Image src={background_image} />
       <CardBody>
         <Heading fontSize={"2xl"}>{name}</Heading>
