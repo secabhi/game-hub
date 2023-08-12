@@ -1,15 +1,16 @@
 import React from "react";
-import useGenres from "../hooks/useGenres";
+import useGenres, { Genre } from "../hooks/useGenres";
 import { Text } from "@chakra-ui/react";
+import useData from "../hooks/useData";
 
 interface Props {}
 
 function GenreList(props: Props) {
-  const { genres, error, isLoading } = useGenres();
+  const { data } = useGenres();
 
   return (
     <ul>
-      {genres.map((e) => (
+      {data.map((e) => (
         <Text>{e.name}</Text>
       ))}
     </ul>
