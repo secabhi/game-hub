@@ -9,7 +9,7 @@ interface Props {
   selectedPlatform: PlatForm | null;
 }
 
-function PlatformSelector({ setSelectedPlatform }: Props) {
+function PlatformSelector({ setSelectedPlatform, selectedPlatform }: Props) {
   const { data, error } = UsePlatforms();
 
   if (error) return null;
@@ -17,7 +17,7 @@ function PlatformSelector({ setSelectedPlatform }: Props) {
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Platform
+        {selectedPlatform?.name || "Platform"}
       </MenuButton>
       <MenuList>
         {data.map((e) => (
