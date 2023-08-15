@@ -3,6 +3,7 @@ import { Games } from "../hooks/useGames";
 import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import PlatformIconList from "./PlatformIconList";
 import CriticMetric from "./CriticMetric";
+import getCroppedImageUrl from "../services/image-url";
 
 interface Props {
   game: Games;
@@ -13,7 +14,7 @@ function GameCard({ game }: Props) {
   //   console.log(parent_platforms.map((e) => e.platform));
   return (
     <Card>
-      <Image src={background_image} />
+      <Image src={getCroppedImageUrl(background_image)} />
       <CardBody>
         <Heading fontSize={"2xl"}>{name}</Heading>
         <HStack justifyContent={"space-between"}>
