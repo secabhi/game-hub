@@ -1,6 +1,14 @@
 import React from "react";
 import { Games } from "../hooks/useGames";
-import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  HStack,
+  Heading,
+  Image,
+  Text,
+  Tooltip,
+} from "@chakra-ui/react";
 import PlatformIconList from "./PlatformIconList";
 import CriticMetric from "./CriticMetric";
 import getCroppedImageUrl from "../services/image-url";
@@ -22,7 +30,11 @@ function GameCard({ game }: Props) {
           />
           <CriticMetric score={metacritic} />
         </HStack>
-        <Heading fontSize={"2xl"}>{name}</Heading>
+        <Tooltip label={name}>
+          <Heading fontSize={"2xl"} noOfLines={1}>
+            {name}
+          </Heading>
+        </Tooltip>
       </CardBody>
     </Card>
   );
